@@ -1,0 +1,1 @@
+console.log(`Item: ${iP.item} \n Price: ${iP.price}`);

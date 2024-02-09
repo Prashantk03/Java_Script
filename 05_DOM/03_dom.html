@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai or DJ</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    
+</body>
+<script>
+    const newDiv = document.createElement('div')
+    console.log(newDiv);
+    newDiv.className = "main"
+    newDiv.id = Math.random(Math.random() * 10 +1)
+    newDiv.setAttribute("title", "chai Or DJ")
+    newDiv.style.backgroundColor = "skyblue"
+    newDiv.style.padding = "20px"
+    // newDiv.innerText = "Chai or DJ"
+    const addText = document.createTextNode("Chai or DJ")
+    newDiv.appendChild(addText)
+
+    document.body.appendChild(newDiv)
+</script>
+</html>

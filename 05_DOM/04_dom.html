@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai or DJ</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<!--********************** adding text ************************-->
+<script>
+
+//*************************traversing way**************************
+
+    function langName(lang) {
+        const newLi = document.createElement('li');
+        newLi.innerHTML = `${lang}`
+        document.querySelector('.language').appendChild(newLi)
+    }
+    langName("C++")
+    langName("Java")
+
+//**********************optimized way******************************
+
+    function optimizedLang(lang) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector('.language').appendChild(li)
+    }
+    optimizedLang("Python")
+    optimizedLang("Swift")
+
+//**********************edit**********************
+
+    const fourthLang  = document.querySelector("li:nth-child(4)")
+    // fourthLang.innerHTML = "Mojo"
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    fourthLang.replaceWith(newLi)
+
+//*********************edit***********************
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    const li = document.createElement('li')
+    li.textContent = "Kotlin"
+    secondLang.replaceWith(li)
+
+//********************edit************************
+
+    const firstLang  = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+//*********************remove*********************
+
+const lastLang = document.querySelector("li:last-child")
+lastLang.remove()
+
+</script>
+</html>
