@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <ul id="buttons">
+        <li id="asia"><button class="styled" type="button">Asia</button></li>
+        <li id="america"><button class="styled" type="button">America</button></li>
+        <li id="austrailia"><button class="styled" type="button">Austrailia</button></li>
+        <li id="russia"><button class="styled" type="button">Russia</button></li>
+        <li id="japan"><button class="styled" type="button">Japan</button></li>
+    </ul>
+</body>
+<script>
+    // document.getElementById('asia').onclick = function () {
+    //     alert("asia");
+    // }
+
+    // document.getElementById('asia').addEventListener('click', function(){
+    //     alert("asia")
+    // }, false)
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode 
+
+
+    // document.getElementById('buttons').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('russia').addEventListener('click', function(e){
+    //     console.log("russia clicked");
+    // }, false)
+
+    // document.getElementById('japan').addEventListener('click', function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("japan clicked");
+    // }, false)
+
+    document.querySelector('#buttons').addEventListener ('click', function(e){
+        console.log(e.target.tagName);
+        console.log(e.target.id);
+        if (e.target.tagName === 'BUTTON'){
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+            
+        };
+        // removeIt.parentNode.removeChild(removeIt)
+
+    })
+
+
+
+
+</script>
+</html>
