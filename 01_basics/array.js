@@ -31,7 +31,7 @@ const newArr = myArr.join()
 
 // console.log("A", myArr);
 
-const myA1 = myArr.slice(1, 3) // (.slice) does not take last one
+const myA1 = myArr.slice(1, 4) // (.slice) does not take last one
 
 // console.log(myA1);
 // console.log("B", myArr);
@@ -56,7 +56,7 @@ const mergedInline = [...marvelHero, ...dcHero] // spread
 
 // console.log(mergedInline);
 
-const newA1 = [1, 2, 3, [4, 5, 6], 7, 8, [9, 10, [11, 12]], 13]
+const newA1 = [1, 2, 3,[4, 5, 6], 7, 8, [9, 10, [11, 12]], 13]
 
 const newA2 = newA1.flat(Infinity) // (.flat) in sequence
 
@@ -71,7 +71,7 @@ let s1 = 100
 let s2 = 200
 let s3 = 300
 
-console.log(Array.of(s1, s2, s3)); // (.of) to make array of diff. data type
+// console.log(Array.of(s1, s2, s3)); // (.of) to make array of diff. data type
 
 
 

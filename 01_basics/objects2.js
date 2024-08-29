@@ -26,10 +26,10 @@ const user2 = {
 const obj1 ={1:"a", 2:"b"}
 const obj2 ={3:"a", 4:"b"}
 
-const obj3 = {...obj1, ...obj2}
-// const obj3 = Object.assign({}, obj1, obj2)
+// const obj3 = {...obj1, ...obj2}
+const obj3 = Object.assign({}, obj1, obj2)
 
-// console.log(obj3);
+console.log(obj3);
 
 // console.log(Object.keys(user));
 // console.log(Object.values(user));
@@ -43,15 +43,15 @@ const obj3 = {...obj1, ...obj2}
 const {useremail: ue} = user2 //ue is the given name
 
 // console.log(useremail);
-console.log(ue);
+// console.log(ue);
 
 //******************JSON*******************/
 {
-    "1":"a",
-    "2":"a",
-    "3":"a",
-    "4":"a",
-    "5":"a",
+    // "1":"a",
+    // "2":"a",
+    // "3":"a",
+    // "4":"a",
+    // "5":"a",
 }
 
 [
