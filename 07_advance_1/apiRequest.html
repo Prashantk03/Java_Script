@@ -1,26 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    
+
+<body style="background-color: #8c8d8a;">
+    <div>
+
+        <h2 style="color: #f6f6f6;">Get fetched data from Github api<span><button id="but"
+                    style="border-radius: 10px; margin: 10px; padding-left: 20px; padding-right: 20px; background-color: #408697;">Info</button></span>
+        </h2>
+
+        <div id="card-container" style="color: blueviolet;"></div>
+
+    </div>
 </body>
 <script>
 
     const requestUrl = 'https://api.github.com/users/Prashantk03'
     const xhr = new XMLHttpRequest();
+    let name, bio, url;
+
     xhr.open('GET', requestUrl)
-    xhr.onreadystatechange = function(){
+    xhr.onreadystatechange = function () {
         // console.log(xhr.readyState);
-        if (xhr.readyState === 4){
+        if (xhr.readyState === 4) {
             const data = JSON.parse(this.responseText)
-            console.log(data.location);
+            name = (data.name);
+            bio = (data.bio);
+            url = (data.html_url)
+
         }
-    }
+    };
     xhr.send()
 
+    document.getElementById('but').addEventListener('click', function () {
+        const cardContainer = document.getElementById('card-container');
+
+        if (name && bio && url) {
+            const card = document.createElement('div');
+            card.style.backgroundColor = '#f6f6f6';
+            card.style.border = '1px solid #ccc';
+            card.style.borderRadius = '8px';
+            card.style.padding = '16px';
+            card.style.marginTop = '16px';
+            card.style.maxWidth = 'auto';
+            card.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+
+            card.innerHTML = `
+                <h3><strong>Name:${name}</strong></h3>
+                <p><strong>Bio:</strong> ${bio}</p>
+                <p><a href="${url}" target="_blank">View Github Profile</a></p>
+                `;
+
+            cardContainer.innerHTML = '';  // Clear any previous card
+            cardContainer.appendChild(card);
+        } else {
+            this.textContent = "Data not loaded yet.";
+        }
+    });
+
 </script>
+
 </html>
